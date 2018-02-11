@@ -44,7 +44,11 @@ function init(){
     // var sprite = new THREE.Sprite( material );
     // scene.add( sprite );
 
+    var material1 =  new THREE.SpriteMaterial({ map: THREE.ImageUtils.loadTexture("assets/data/gsc.png") });
+    var sprite1 = new THREE.Sprite( material1 );
 
+    var material2 =  new THREE.SpriteMaterial({ map: THREE.ImageUtils.loadTexture("assets/data/ARtangie2.png") });
+    var sprite2 = new THREE.Sprite( material2 );
 
 
 
@@ -66,10 +70,11 @@ function init(){
     arMarker[0].addEventListener('markerFound', function(){
       if(state !== 'gsc'){
 
-        material =  new THREE.SpriteMaterial({ map: THREE.ImageUtils.loadTexture("assets/data/gsc.png") });
-        sprite = new THREE.Sprite( material );
-        scene.add(sprite);
-        render()
+        // material =  new THREE.SpriteMaterial({ map: THREE.ImageUtils.loadTexture("assets/data/gsc.png") });
+        // sprite = new THREE.Sprite( material );
+        scene.remove( sprite2 );
+        scene.add( sprite1 );
+        // render()
         console.log('added gsc')
         state = 'gsc'
       }
@@ -86,10 +91,11 @@ function init(){
     arMarker[1].addEventListener('markerFound', function(){
       if(state !== 'weird'){
 
-        material =  new THREE.SpriteMaterial({ map: THREE.ImageUtils.loadTexture("assets/data/ARtangie2.png") });
-        sprite = new THREE.Sprite( material );
-        scene.add(sprite);
-        render()
+        // material =  new THREE.SpriteMaterial({ map: THREE.ImageUtils.loadTexture("assets/data/ARtangie2.png") });
+        // sprite = new THREE.Sprite( material );
+        scene.remove( sprite1 );
+        scene.add( sprite2 );
+        // render();
         state = 'weird'
       }
       console.log('weirder')
