@@ -75,7 +75,7 @@ function init(){
 
     arMarker[1] = new THREEx.ArMarkerControls(arContext, camera, {
         type : 'pattern',
-        patternUrl : './assets/data/u4bi.patt',
+        patternUrl : './assets/data/tg.patt',
         changeMatrixMode: 'cameraTransformMatrix'
     });
 
@@ -86,14 +86,8 @@ function init(){
         scene.children[1] = sprite
         state = 'weird'
       }
-
     })
 
-    arMarker[2] = new THREEx.ArMarkerControls(arContext, camera, {
-        type : 'pattern',
-        patternUrl : './assets/data/pattern-marker5.patt',
-        changeMatrixMode: 'cameraTransformMatrix'
-    });
 
 
 
