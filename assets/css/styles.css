@@ -33,9 +33,9 @@
 .fade-out {
   visibility: hidden;
   opacity: 0;
+  display: none !important;
   transition: visibility 0s 2s, opacity 2s linear;
 }
-
 
 @media screen and (max-width: 420px) {
   .avatar img#scan {
