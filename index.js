@@ -57,18 +57,18 @@ function init(){
 
     arMarker[0] = new THREEx.ArMarkerControls(arContext, camera, {
         type : 'pattern',
-        patternUrl : './assets/data/patt.hiro',
+        patternUrl : './assets/data/gdp.patt',
         changeMatrixMode: 'cameraTransformMatrix'
     });
 
     arMarker[0].addEventListener('markerFound', function(){
 
-      if(state !== 'gsc'){
-        material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/gsc.png" ), color: 0xffffff, fog: true } );
+      if(state !== 'gdp'){
+        material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/GDP_O.png" ), color: 0xffffff, fog: true } );
         sprite = new THREE.Sprite( material );
         scene.children[1] = sprite
         console.log(scene.children)
-        state = 'gsc'
+        state = 'gdp'
       }
 
     })
@@ -80,13 +80,29 @@ function init(){
     });
 
     arMarker[1].addEventListener('markerFound', function(){
-      if(state !== 'weird'){
-        material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/ARtangie2.png" ), color: 0xffffff, fog: true } );
+      if(state !== 'tg'){
+        material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/TG_O.png" ), color: 0xffffff, fog: true } );
         sprite = new THREE.Sprite( material );
         scene.children[1] = sprite
-        state = 'weird'
+        state = 'tg'
       }
     })
+
+    arMarker[2] = new THREEx.ArMarkerControls(arContext, camera, {
+        type : 'pattern',
+        patternUrl : './assets/data/sd.patt',
+        changeMatrixMode: 'cameraTransformMatrix'
+    });
+
+    arMarker[2].addEventListener('markerFound', function(){
+      if(state !== 'sd'){
+        material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/SD_O.png" ), color: 0xffffff, fog: true } );
+        sprite = new THREE.Sprite( material );
+        scene.children[1] = sprite
+        state = 'sd'
+      }
+    })
+
 
 
 
