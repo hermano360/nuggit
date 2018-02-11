@@ -75,16 +75,17 @@ function init(){
 
     arMarker[1].addEventListener('markerFound', function(){
       if(state !== 'tg'){
-        ga('send', {
-          hitType: 'event',
-          eventCategory: 'Videos',
-          eventAction: 'play',
-          eventLabel: 'Fall Campaign'
-        });
+        // ga('send', {
+        //   hitType: 'event',
+        //   eventCategory: 'Videos',
+        //   eventAction: 'play',
+        //   eventLabel: 'Fall Campaign'
+        // });
         material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/TG_O.png" ), color: 0xffffff, fog: true } );
         sprite = new THREE.Sprite( material );
         sprite.scale.set(1.5, 1.5, 1);
         scene.children[1] = sprite;
+        ga(‘send’, ‘event’, ‘Category’, ‘Action’, ‘Label’, ‘Value’)
         state = 'tg';
       }
     })
