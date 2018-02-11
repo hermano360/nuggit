@@ -59,7 +59,7 @@ function init(){
       if(state !== 'gdp'){
         material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/GDP_O.png" ), color: 0xffffff, fog: true } );
         sprite = new THREE.Sprite( material );
-        sprite.scale.set(1.5, 1.5, 1);
+        sprite.scale.set(3, 1.5, 1);
         scene.children[1] = sprite;
         console.log(scene.children)
         state = 'gdp';
@@ -77,7 +77,7 @@ function init(){
       if(state !== 'tg'){
         material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/TG_O.png" ), color: 0xffffff, fog: true } );
         sprite = new THREE.Sprite( material );
-        sprite.scale.set(1.5, 1.5, 1);
+        sprite.scale.set(3, 1.5, 1);
         scene.children[1] = sprite;
         state = 'tg';
       }
@@ -93,7 +93,7 @@ function init(){
       if(state !== 'sd'){
         material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/SD_O.png" ), color: 0xffffff, fog: true } );
         sprite = new THREE.Sprite( material );
-        sprite.scale.set(1.5, 1.5, 1);
+        sprite.scale.set(3, 1.5, 1);
         scene.children[1] = sprite;
         state = 'sd';
       }
