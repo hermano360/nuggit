@@ -1,0 +1,22 @@
+#wrapper {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d7efd5+0,80c96c+100 */
+background: #d7efd5; /* Old browsers */
+background: -moz-linear-gradient(top, #d7efd5 0%, #80c96c 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #d7efd5 0%,#80c96c 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #d7efd5 0%,#80c96c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7efd5', endColorstr='#80c96c',GradientType=0 ); /* IE6-9 */
+}
+
+.info-box {
+  max-width: 125px;
+  max-height: 125px;
+}
+
+.info-box img {
+  height: 50%;
+  width: 50%;
+}
+
+.info-box span:nth-child(2) {
+  display: block;
+}
