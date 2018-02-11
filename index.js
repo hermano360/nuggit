@@ -67,10 +67,9 @@ function init(){
         material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/gsc.png" ), color: 0xffffff, fog: true } );
         sprite = new THREE.Sprite( material );
         scene.children[1] = sprite
-        console.log('children', scene.children)
+        console.log(scene.children)
         state = 'gsc'
       }
-      console.log('gsc already here')
 
     })
 
@@ -85,10 +84,8 @@ function init(){
         material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/ARtangie2.png" ), color: 0xffffff, fog: true } );
         sprite = new THREE.Sprite( material );
         scene.children[1] = sprite
-        console.log('children', scene.children)
         state = 'weird'
       }
-      console.log('weirder')
 
     })
 
