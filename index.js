@@ -39,9 +39,9 @@ function init(){
     //
     // scene.add(mesh);
 
-    // var map = THREE.ImageUtils.loadTexture( "assets/data/GSC.jpg" );
-    // var material = new THREE.SpriteMaterial( { map: map, color: 0xffffff, fog: true } );
-    // var sprite = new THREE.Sprite( material );
+
+    // material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/GSC.jpg" ), color: 0xffffff, fog: true } );
+    // sprite = new THREE.Sprite( material );
     // scene.add( sprite );
 
 
@@ -64,13 +64,12 @@ function init(){
     });
 
     arMarker[0].addEventListener('markerFound', function(){
-      if(state !== 'gsc'){
 
-        material =  new THREE.SpriteMaterial({ map: THREE.ImageUtils.loadTexture("assets/data/gsc.png") });
+      if(state !== 'gsc'){
+        material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/gsc.png" ), color: 0xffffff, fog: true } );
         sprite = new THREE.Sprite( material );
         scene.add(sprite);
-        render()
-        console.log('added gsc')
+        console.log(sprite.children)
         state = 'gsc'
       }
       console.log('gsc already here')
@@ -85,11 +84,9 @@ function init(){
 
     arMarker[1].addEventListener('markerFound', function(){
       if(state !== 'weird'){
-
-        material =  new THREE.SpriteMaterial({ map: THREE.ImageUtils.loadTexture("assets/data/ARtangie2.png") });
+        material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/ARtangie2.png" ), color: 0xffffff, fog: true } );
         sprite = new THREE.Sprite( material );
         scene.add(sprite);
-        render()
         state = 'weird'
       }
       console.log('weirder')
