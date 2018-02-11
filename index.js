@@ -1,14 +1,16 @@
 var renderer,
     scene,
     camera,
-    container;
+    container,
+    state="";
 
 var arSource,
     arContext,
     arMarker = [];
 
 var
-    mesh;
+    mesh,
+    sprite;
 
 init();
 
@@ -29,11 +31,18 @@ function init(){
     scene.add(camera);
     // scene.visible = false;
 
-    material = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture("assets/data/ARtangie2.png") });
 
-    mesh = new THREE.Mesh(new THREE.PlaneGeometry( 5, 5, 5 ), material);
-    scene.add(mesh);
 
+    // material = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture("assets/data/ARtangie2.png") });
+    // mesh = new THREE.Mesh(new THREE.PlaneGeometry( 5, 5, 5 ), material);
+    //
+    //
+    // scene.add(mesh);
+
+    // var map = THREE.ImageUtils.loadTexture( "assets/data/GSC.jpg" );
+    // var material = new THREE.SpriteMaterial( { map: map, color: 0xffffff, fog: true } );
+    // var sprite = new THREE.Sprite( material );
+    // scene.add( sprite );
 
 
 
@@ -54,15 +63,42 @@ function init(){
         changeMatrixMode: 'cameraTransformMatrix'
     });
 
+    arMarker[0].addEventListener('markerFound', function(){
+      if(state !== 'gsc'){
+
+        material =  new THREE.SpriteMaterial({ map: THREE.ImageUtils.loadTexture("assets/data/gsc.png") });
+        sprite = new THREE.Sprite( material );
+        scene.add(sprite);
+        render()
+        console.log('added gsc')
+        state = 'gsc'
+      }
+      console.log('gsc already here')
+
+    })
+
     arMarker[1] = new THREEx.ArMarkerControls(arContext, camera, {
         type : 'pattern',
         patternUrl : './assets/data/u4bi.patt',
         changeMatrixMode: 'cameraTransformMatrix'
     });
 
-    arMarker[1] = new THREEx.ArMarkerControls(arContext, camera, {
+    arMarker[1].addEventListener('markerFound', function(){
+      if(state !== 'weird'){
+
+        material =  new THREE.SpriteMaterial({ map: THREE.ImageUtils.loadTexture("assets/data/ARtangie2.png") });
+        sprite = new THREE.Sprite( material );
+        scene.add(sprite);
+        render()
+        state = 'weird'
+      }
+      console.log('weirder')
+
+    })
+
+    arMarker[2] = new THREEx.ArMarkerControls(arContext, camera, {
         type : 'pattern',
-        patternUrl : './assets/data/pattern.patt',
+        patternUrl : './assets/data/pattern-marker5.patt',
         changeMatrixMode: 'cameraTransformMatrix'
     });
 
@@ -89,7 +125,6 @@ function init(){
     render();
 
 }
-
 
 
 
