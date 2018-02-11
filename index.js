@@ -16,9 +16,8 @@ init();
 
 function init(){
 
-
-
     container = document.getElementById('container');
+    console.log(container)
 
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     scene = new THREE.Scene();
@@ -40,9 +39,9 @@ function init(){
     // scene.add(mesh);
 
 
-    // material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/GSC.jpg" ), color: 0xffffff, fog: true } );
-    // sprite = new THREE.Sprite( material );
-    // scene.add( sprite );
+    material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/ARtangie2.png" ), color: 0xffffff, fog: true } );
+    sprite = new THREE.Sprite( material );
+    scene.add( sprite );
 
 
 
@@ -64,7 +63,7 @@ function init(){
     });
 
     arMarker[0].addEventListener('markerFound', function(){
-
+      console.log('hey now')
       if(state !== 'gsc'){
         material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/gsc.png" ), color: 0xffffff, fog: true } );
         sprite = new THREE.Sprite( material );
