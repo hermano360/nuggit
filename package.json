@@ -1,0 +1,25 @@
+{
+  "name": "simple-ar.js",
+  "version": "1.0.0",
+  "description": "![Alt text](assets/ar.gif)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/u4bi-git/simple-ar.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/u4bi-git/simple-ar.js/issues"
+  },
+  "homepage": "https://github.com/u4bi-git/simple-ar.js#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {}
+}

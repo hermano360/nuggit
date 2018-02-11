@@ -7,7 +7,7 @@ var arSource,
     arContext,
     arMarker = [];
 
-var 
+var
     mesh;
 
 init();
@@ -27,15 +27,13 @@ function init(){
 
     container.appendChild(renderer.domElement);
     scene.add(camera);
-    scene.visible = false;
+    // scene.visible = false;
 
+    material = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture("assets/data/ARtangie2.png") });
 
-    mesh = new THREE.Mesh(new THREE.BoxGeometry(1,1,1), new THREE.MeshBasicMaterial({
-        color: 0xFF00FF,
-        transparent: true,
-        opacity: 0.5
-    }));
+    mesh = new THREE.Mesh(new THREE.PlaneGeometry( 5, 5, 5 ), material);
     scene.add(mesh);
+
 
 
 
@@ -62,6 +60,12 @@ function init(){
         changeMatrixMode: 'cameraTransformMatrix'
     });
 
+    arMarker[1] = new THREEx.ArMarkerControls(arContext, camera, {
+        type : 'pattern',
+        patternUrl : './assets/data/pattern.patt',
+        changeMatrixMode: 'cameraTransformMatrix'
+    });
+
 
 
 
@@ -76,22 +80,22 @@ function init(){
     });
 
     arContext.init(function onCompleted(){
-        
+
         camera.projectionMatrix.copy(arContext.getProjectionMatrix());
 
     });
 
 
-    render();   
-    
-}   
+    render();
+
+}
 
 
 
 
 function render(){
     requestAnimationFrame(render);
-    renderer.render(scene,camera);                
+    renderer.render(scene,camera);
 
     if(arSource.ready === false) return;
 
@@ -99,6 +103,6 @@ function render(){
     scene.visible = camera.visible;
 
 
-    mesh.rotateX(.1);
+    // mesh.rotateX(.1);
 
-}          
+}
