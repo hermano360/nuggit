@@ -29,22 +29,15 @@ function init(){
     scene.add(camera);
     // scene.visible = false;
 
-
-
     // material = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture("assets/data/ARtangie2.png") });
     // mesh = new THREE.Mesh(new THREE.PlaneGeometry( 5, 5, 5 ), material);
     //
     //
     // scene.add(mesh);
 
-
     material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/ARtangie2.png" ), color: 0xffffff, fog: true } );
     sprite = new THREE.Sprite( material );
     scene.add( sprite );
-
-
-
-
 
     arSource = new THREEx.ArToolkitSource({
         sourceType : 'webcam',
@@ -66,9 +59,10 @@ function init(){
       if(state !== 'gdp'){
         material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/GDP_O.png" ), color: 0xffffff, fog: true } );
         sprite = new THREE.Sprite( material );
-        scene.children[1] = sprite
+        sprite.scale.set(1.5, 1.5, 1);
+        scene.children[1] = sprite;
         console.log(scene.children)
-        state = 'gdp'
+        state = 'gdp';
       }
 
     })
@@ -89,8 +83,9 @@ function init(){
         });
         material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/TG_O.png" ), color: 0xffffff, fog: true } );
         sprite = new THREE.Sprite( material );
-        scene.children[1] = sprite
-        state = 'tg'
+        sprite.scale.set(1.5, 1.5, 1);
+        scene.children[1] = sprite;
+        state = 'tg';
       }
     })
 
@@ -104,16 +99,11 @@ function init(){
       if(state !== 'sd'){
         material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/SD_O.png" ), color: 0xffffff, fog: true } );
         sprite = new THREE.Sprite( material );
-        scene.children[1] = sprite
-        state = 'sd'
+        sprite.scale.set(1.5, 1.5, 1);
+        scene.children[1] = sprite;
+        state = 'sd';
       }
     })
-
-
-
-
-
-
 
     /* handle */
     arSource.init(function(){
@@ -130,12 +120,8 @@ function init(){
 
     });
 
-
     render();
-
 }
-
-
 
 function render(){
     requestAnimationFrame(render);
@@ -146,7 +132,5 @@ function render(){
     arContext.update(arSource.domElement);
     scene.visible = camera.visible;
 
-
     // mesh.rotateX(.1);
-
 }
