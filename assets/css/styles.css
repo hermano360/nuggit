@@ -23,10 +23,16 @@
   display: block;
 }
 
-.avatar img#scan {
+.avatar figure {
   position: absolute;
-  top: 12px;
-  left: 36%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.avatar img#scan {
   box-shadow: none;
 }
 
@@ -39,6 +45,10 @@
 
 @media screen and (max-width: 420px) {
   .avatar img#scan {
-    left: 35%;
+    left: 33%;
+  }
+
+  .info-box {
+    max-width: 75px;
   }
 }
