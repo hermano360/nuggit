@@ -43,7 +43,13 @@
   transition: visibility 0s 2s, opacity 2s linear;
 }
 
-@media screen and (max-width: 420px) {
+.icons {
+  display: flex;
+  justify-content: space-evenly;
+  /*justify-content: space-between;*/
+}
+
+@media screen and (max-width: 443px) {
   .avatar img#scan {
     left: 33%;
   }
