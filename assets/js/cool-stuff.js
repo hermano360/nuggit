@@ -9,11 +9,6 @@ function activateAR () {
   var _arStuffContainer = document.createElement('div');
   _arStuffContainer.setAttribute('id', 'container');
 
-  var _arStuffIndicator = document.createElement('div');
-  var _arStuffIndicatorText = document.createTextNode('a');
-
-  _arStuffIndicator.appendChild(_arStuffIndicatorText);
-  _arStuffContainer.appendChild(_arStuffIndicator);
   document.body.appendChild(_arStuffContainer);
 
   var _script = document.createElement('script');

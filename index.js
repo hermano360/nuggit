@@ -17,7 +17,6 @@ init();
 function init(){
 
     container = document.getElementById('container');
-    console.log(container)
 
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     scene = new THREE.Scene();
@@ -63,12 +62,12 @@ function init(){
     });
 
     arMarker[0].addEventListener('markerFound', function(){
-      console.log('hey now')
+
       if(state !== 'gsc'){
         material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/gsc.png" ), color: 0xffffff, fog: true } );
         sprite = new THREE.Sprite( material );
-        scene.add(sprite);
-        console.log(sprite.children)
+        scene.children[1] = sprite
+        console.log('children', scene.children)
         state = 'gsc'
       }
       console.log('gsc already here')
@@ -85,7 +84,8 @@ function init(){
       if(state !== 'weird'){
         material = new THREE.SpriteMaterial( { map: THREE.ImageUtils.loadTexture( "assets/data/ARtangie2.png" ), color: 0xffffff, fog: true } );
         sprite = new THREE.Sprite( material );
-        scene.add(sprite);
+        scene.children[1] = sprite
+        console.log('children', scene.children)
         state = 'weird'
       }
       console.log('weirder')
